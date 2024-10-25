@@ -4,45 +4,65 @@ import os
 
 os.system('cls')
 print("Formulas de figuras geométricas.")
+flag = True
+flagTwo =True
 
-option = menu()
+while flagTwo: 
 
-if option == 1:
+    option = menu()
 
-    height, weight = rectangleData()
-    print(f"Área de Rectangulo: {rectangleArea(height, weight)} Metros Cuadrados.")
+    if option == 1:
 
-elif option == 2:
+        height, weight = rectangleData()
+        print(f"Área de Rectangulo: {rectangleArea(height, weight)} Metros Cuadrados.")
 
-    base, height = triangleData()
-    print(f"Área de Triangulo: {triangleArea(base, height)}")
+    elif option == 2:
 
-elif option == 3:
+        base, height = triangleData()
+        print(f"Área de Triangulo: {triangleArea(base, height)}")
 
-    square = squareData()
-    print(f"Área de Cuadrado: {squareArea(square)}")
+    elif option == 3:
 
-elif option == 4:
+        square = squareData()
+        print(f"Área de Cuadrado: {squareArea(square)}")
 
-    radius = circleData()
-    print(f"Área del Circulo: {circleArea(radius)}")
+    elif option == 4:
 
-elif option == 5:
+        radius = circleData()
+        print(f"Área del Circulo: {circleArea(radius)}")
+
+    elif option == 5:
+        
+        perimeter, apotema = pentagonData()
+        print(f"Area del Pentagono: {pentagonArea(perimeter, apotema)}")
+
+    elif option == 6:
+
+        maxBase, minBase, height = trapezeData()
+        print(f"Area del Trapecio: {trapezeArea(maxBase, minBase, height)}")
+
+    elif option == 7:
+
+        base, height = romboidwData()
+        print(f"Área del Romboide: {romboidwArea(base, height)}")
+
+    elif option == 8:
+
+        maxDiagonal, minDiagonal = diamondData()
+        print(f"Área del Rombo: {diamondArea(maxDiagonal, minDiagonal)}")
+
+    while flag:
+        
+        confirm = str(input("Continue? S | N: "))
+        print()
+        if confirm.upper() == "S":
+            flag = False
+
+        elif confirm.upper() == "N":
+            flagTwo = False
+            flag = False
+        
+        else:
+            print("Caracter Incorrecto!")
     
-    perimeter, apotema = pentagonData()
-    print(f"Area del Pentagono: {pentagonArea(perimeter, apotema)}")
-
-elif option == 6:
-
-    maxBase, minBase, height = trapezeData()
-    print(f"Area del Trapecio: {trapezeArea(maxBase, minBase, height)}")
-
-elif option == 7:
-
-    base, height = romboidwData()
-    print(f"Área del Romboide: {romboidwArea(base, height)}")
-
-elif option == 8:
-
-    maxDiagonal, minDiagonal = diamondData()
-    print(f"Área del Rombo: {diamondArea(maxDiagonal, minDiagonal)}")
+    flag = True

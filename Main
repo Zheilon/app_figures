@@ -7,7 +7,7 @@ print("Formulas de figuras geométricas.")
 flag = True
 flagTwo =True
 
-while flagTwo: 
+while flag: 
 
     option = menu()
 
@@ -51,12 +51,13 @@ while flagTwo:
         maxDiagonal, minDiagonal = diamondData()
         print(f"Área del Rombo: {diamondArea(maxDiagonal, minDiagonal)}")
 
-    while flag:
+    while flagTwo:
         
         confirm = str(input("Continue? S | N: "))
         print()
+
         if confirm.upper() == "S":
-            flag = False
+            flagTwo = False
 
         elif confirm.upper() == "N":
             flagTwo = False
@@ -65,4 +66,4 @@ while flagTwo:
         else:
             print("Caracter Incorrecto!")
     
-    flag = True
+    flagTwo = True
